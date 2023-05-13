@@ -3,6 +3,8 @@
 
 	const width = window.innerWidth;
 	const height = window.innerHeight;
+
+	let testCommit = true;
 	
 	const sketch = (p5) => {		
 		class Letter{
