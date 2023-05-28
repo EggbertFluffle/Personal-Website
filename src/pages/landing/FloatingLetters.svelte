@@ -124,11 +124,14 @@
 			for(let i = 0; i < letters.length; i++) {
 		    letters[i] = new Letter(letters[i], (i * kearning) + fontSize, height * 0.35);
 		  }
+			letters[0].rot = 0;
+			letters[0].applyRotForce(412);
 		}
 
 		p5.draw = () => {
-			p5.background(0, 0, 0, 50);
+			p5.background(0, 0, 0);
 
+			p5.fill(255);
 			letters.forEach(l => {
 				p5.resetMatrix();
 				l.behaviors();

@@ -1,9 +1,11 @@
-<!-- https://www.spinxdigital.com/ -->
+ff<!-- https://www.spinxdigital.com/ -->
 
 <script>
 	import FloatingLetters from "./FloatingLetters.svelte";
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import "@fontsource/zcool-kuaile"
+	import "@fontsource/nokora";
 
 	let mounted = false;
 
@@ -12,30 +14,33 @@
 	});
 </script>
 
-<div class="main">
-	<div class="insetBorder">
-		<div class="downArrow"></div>
-	</div>
+<main>
+	<svg width="" height="">
+    <polygon points={`${window.innerWidth * 0.85},0 0,${window.innerHeight} ${window.innerWidth},${window.innerHeight}`}/>
+  </svg>
 	{#if mounted}
 		<div class="splashContainer">
-			<h1 transition:fade={{ delay: 2000, duration: 1500 }}>My name is Harrison DiAmbrosio,</h1>
-			<p transition:fade={{ delay: 2500, duration: 1500 }}>
-				a <span>developer</span> devout to making immersive and exspressional web experiences
+			<h1 class="nokora" transition:fade={{ delay: 2000, duration: 1500 }}>My name is <span class="name">Harrison DiAmbrosio</span>,</h1>
+			<p class="nokora" transition:fade={{ delay: 2500, duration: 1500 }}>
+				a developer devout to making immersive and exspressional web experiences
 			</p>
 		</div>
 	{/if}
 	<div class="floatingLettersContainer">
-		<FloatingLetters text={"Welcome();"} textSize={128} width={window.innerWidth} height={window.innerHeight} />
+		<FloatingLetters text={"Welcome();"} textSize={164} width={window.innerWidth} height={window.innerHeight} />
 	</div>
-</div>
+</main>
 
 <style>
-	.main {
-		width: 100%;
-		height: 100%;
+	main {
+		width: 100vw;
+		height: 100vh;
 		padding: 0px;
 		margin: 0px;
-		font-family: "mono";
+	}
+
+	.nokora {
+		font-family: nokora;
 	}
 
 	.floatingLettersContainer {
@@ -56,7 +61,7 @@
 
 	h1 {
 		color: white;
-		font-size: 4em;
+		font-size: 5em;
 		margin-bottom: 2rem ;
 	}
 
@@ -64,27 +69,17 @@
 		color: white;
 		font-size: 3em;
 		width: 50%;
+		font-weight: 100;
 	}
 
-	.insetBorder {
-		display: flex;
-		flex-direction: column-reverse;
+	svg {
 		position: absolute;
-		align-items: center;
-		top: 20px;
-		left: 20px;
-		width: calc(100vw - 40px);
-		height: calc(100vh - 40px);
-		border: 4px white solid;
-		z-index: 1;
+		fill: white;
+		mix-blend-mode: difference;
+		z-index: 2;
 	}
 
-	.downArrow {
-		width: 20px;
-		height: 20px;
-		border-left: 4px white solid;
-		border-bottom: 4px white solid;
-		margin: 2em;
-		transform: rotate(-45deg);
+	.name {
+		font-family: "ZCOOL KuaiLe", sans-seriff;
 	}
 </style>

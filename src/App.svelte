@@ -1,13 +1,27 @@
 <script>
 	import Landing from "./pages/landing/Landing.svelte";
 	import AboutMe from "./pages/aboutme/AboutMe.svelte";
+	import { scrollY } from "./stores.js";
+
+	window.addEventListener("scroll", () => {
+		scrollY.set(window.scrollY);
+	});
 </script>
 
-<div>
+<main>
   <Landing />
 	<AboutMe />
-</div>
+</main>
 
 <style>
-
+	main {
+		display: flex;
+		flex-direction: column;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	* {
+		font-family: sans-seriff;
+	}
 </style>

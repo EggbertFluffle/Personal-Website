@@ -10,15 +10,44 @@
 				margin: 0px;
 				padding: 0px;
 				overflow-x: hidden;
+				font-family: sans-serif;
+				scroll-behaviour: smooth;
+				/* cursor: none; */
 			}
 
 			::-webkit-scrollbar {
 				display: none;
 			}
+
+			/* #cursor {
+				position: sticky;
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				mix-blend-mode: difference;
+  			z-index: 1000;
+			} */
 		</style>
   </head>
   <body style="background-color: black;">
-    <div id="app"></div>
+    <div id="app">
+
+			<!-- <div id="cursor"></div> -->
+		</div>
     <script type="module" src="/src/main.js"></script>
+		<script>
+			// const cursor = document.getElementById("cursor");
+			// window.addEventListener("mousemove", (e) => {
+			// 	cursor.style.top = (e.clientY - 15) + "px";
+			// 	cursor.style.left = (e.clientX - 25 / 2) + "px";
+			// });
+
+			// window.onresize = () => {
+			// 	console.log("Width: " + window.innerWidth);
+			// 	console.log("Height: " + window.innerHeight);
+			// };
+		</script>
+		
   </body>
 </html>
